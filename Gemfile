@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +31,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+  gem 'mysql2'
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -44,3 +50,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+# This version needs to be hardcoded for OpenShift compatibility
+gem 'thor', '= 0.14.6'
+
+# This needs to be installed so we can run Rails console on OpenShift directly
+gem 'minitest'
