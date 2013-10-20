@@ -28,12 +28,12 @@ gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  #gem 'sdoc', require: false
 end
 
 group :production do
-  gem 'mysql2'
-  gem 'pg'
+ # gem 'mysql2'
+  #gem 'pg'
 end
 
 group :development, :test do
@@ -51,7 +51,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 # This version needs to be hardcoded for OpenShift compatibility
-gem 'thor', '= 0.14.6'
+#gem 'thor', '= 0.14.6'
 
 # This needs to be installed so we can run Rails console on OpenShift directly
 gem 'minitest'
